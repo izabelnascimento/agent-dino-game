@@ -24,11 +24,11 @@ class ModelBasedAgent:
         is_jumping = self.state["dino_is_jumping"]
 
         if action == "jump" and not is_jumping:
-            dinosaur.dino_duck = False
+            dinosaur.dino_down = False
             dinosaur.dino_run = False
             dinosaur.dino_jump = True
-        elif action == "duck" and not is_jumping:
-            dinosaur.dino_duck = True
+        elif action == "down" and not is_jumping:
+            dinosaur.dino_down = True
             dinosaur.dino_run = False
             dinosaur.dino_jump = False
 
@@ -37,7 +37,7 @@ class ModelBasedAgent:
             return ""
         obstacle = obstacles[0]
         if isinstance(obstacle, Bird):
-            return "duck" if self.state["obstacle_height"] < 300 else "jump"
+            return "down" if self.state["obstacle_height"] < 300 else "jump"
 
         return "jump"
 

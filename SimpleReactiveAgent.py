@@ -13,14 +13,14 @@ def simple_reactive_agent(obstacles, dinosaur):
 
     if isinstance(obstacle, Bird):
         if obstacle.rect.y < 300:
-            dinosaur.dino_duck = True
+            dinosaur.dino_down = True
             dinosaur.dino_run = False
             dinosaur.dino_jump = False
         else:
-            dinosaur.dino_duck = False
+            dinosaur.dino_down = False
             dinosaur.dino_run = False
             dinosaur.dino_jump = True
     else:
-        dinosaur.dino_duck = False
+        dinosaur.dino_down = False
         dinosaur.dino_run = False
         dinosaur.dino_jump = True
